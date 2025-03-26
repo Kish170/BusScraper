@@ -1,5 +1,5 @@
 public class TripResults {
-    public TripResults(float price, String departureLoc, String destinationLoc, int travelers, int duration, String provider, int stops, Date date, String departureTime, String arrivalTime) {
+    public TripResults(float price, String departureLoc, String destinationLoc, int travelers, int duration, String provider, int stops, String departureTime, String arrivalTime) {
         this.price = price;
         this.departureLoc = departureLoc;
         this.destinationLoc = destinationLoc;
@@ -7,7 +7,7 @@ public class TripResults {
         this.duration = duration;
         this.provider = provider;
         this.stops = stops;
-        this.date = date;
+//        this.date = date;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
     }
@@ -53,12 +53,12 @@ public class TripResults {
     public void setStops(int stops) {
         this.stops = stops;
     }
-    public Date getDate() {
-        return date;
-    }
-    public void setDate(Date date) {
-        this.date = date;
-    }
+//    public Date getDate() {
+//        return date;z
+//    }
+//    public void setDate(Date date) {
+//        this.date = date;
+//    }
     public String getDepartureTime() {
         return departureTime;
     }
@@ -83,7 +83,7 @@ public class TripResults {
                 ", duration=" + duration +
                 ", provider='" + provider + '\'' +
                 ", stops=" + stops +
-                ", date=" + date +
+//                ", date=" + date +
                 '}';
     }
     //private String tripType; deal with this later
@@ -96,5 +96,5 @@ public class TripResults {
     private int duration;
     private String provider;
     private int stops;
-    private Date date;
+//    private Date date;
 }

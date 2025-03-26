@@ -5,7 +5,7 @@ import pages.SearchPage;
 
 public class Main {
     public static void main(String[] args) {
-        Date date = new Date(2021, 10, 10);
+        CustomDate date = new CustomDate(2025, 4, 1);
         System.out.println(date);
         System.out.println("hello world");
         WebDriver driver = new ChromeDriver();
@@ -13,7 +13,7 @@ public class Main {
 //        bot.getCities();
 //        bot.getResults("Toronto", "Belleville", 2);
         SearchPage searchPage = new SearchPage(driver, new MegabusLocators());
-        searchPage.searchTrip("Toronto", "Belleville", 2);
+        searchPage.searchTrip("Toronto", "Belleville", 2, date);
         driver.quit();
     }
 

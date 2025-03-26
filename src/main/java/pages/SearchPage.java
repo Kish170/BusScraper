@@ -2,12 +2,13 @@ package pages;
 
 import locators.LocatorsBase;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class SearchPage extends BasePage {
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class SearchPage<CustomDate> extends BasePage {
     public SearchPage(WebDriver driver, LocatorsBase locator) {
         super(driver, locator);
     }
@@ -16,7 +17,7 @@ public class SearchPage extends BasePage {
         navigateTo(locator.getURL());
     }
 
-    public void searchTrip(String from, String to, int travelers) {
+    public void searchTrip(String from, String to, int travelers, CustomDate date) {
         openPage();
         WebElement closeButton = checkElement(locator.getCloseButton());
         closeButton.click();
@@ -36,11 +37,24 @@ public class SearchPage extends BasePage {
         toCity.sendKeys(to);
         this.sleep(2);
         actions.moveToElement(toCity).sendKeys(Keys.ENTER).perform();
-
         dateButton.click();
+        System.out.println(date.toString());
+        Pattern pattern = Pattern.compile("([a-zA-Z]+)");
+        Matcher matcher = pattern.matcher(date.toString());
+        String monthStr = null;
+        String dayStr = null;
+        if (matcher.find()) {
+            monthStr = matcher.group(1);
+            monthStr = monthStr.substring(0, 3).toUpperCase();
+        }
+        pattern = Pattern.compile("([0-9]+)");
+        matcher = pattern.matcher(date.toString());
+        if (matcher.find()) {
+            dayStr = matcher.group(1);
+        }
         WebElement month = checkElement(locator.getMonthYear());
         WebElement day = checkElement(locator.getDay());
-        while (!month.getText().equals("APR 2025") && !day.getText().equals("1")) {
+        while (!month.getText().startsWith(monthStr) && !day.getText().equals(dayStr)) {
             actions.moveToElement(dateButton).sendKeys(Keys.ARROW_RIGHT).perform();
             month = checkElement(locator.getMonthYear());
             day = checkElement(locator.getDay());
