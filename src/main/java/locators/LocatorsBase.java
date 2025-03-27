@@ -4,7 +4,7 @@ public interface LocatorsBase {
     String getURL();
     String getStopsURL();
     String getCloseButton();
-    String getTripButton();
+    String getOneWayButton();
     String getCityElements();
     String getFromInput();
     String getToInput();
@@ -13,4 +13,6 @@ public interface LocatorsBase {
     String getDateButton();
     String getMonthYear();
     String getDay();
+    String getRoundTripButton();
+    String getReturnDateButton();
 }

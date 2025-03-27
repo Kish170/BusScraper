@@ -1,3 +1,5 @@
+package composites;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 public class CustomDate {
@@ -13,6 +15,12 @@ public class CustomDate {
     public String formatDate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy", java.util.Locale.ENGLISH);
         return date.format(formatter);
+    }
+    public int getDay() {
+        return date.getDayOfMonth();
+    }
+    public int dayOfWeek() {
+        return date.getDayOfWeek().getValue();
     }
     @Override
     public String toString() {
