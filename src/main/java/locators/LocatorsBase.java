@@ -15,4 +15,5 @@ public interface LocatorsBase {
     String getDay();
     String getRoundTripButton();
     String getReturnDateButton();
+    String getNextMonth();
 }

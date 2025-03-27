@@ -12,7 +12,8 @@ public class MegabusLocators implements LocatorsBase {
     private static final String MEGABUS_DATE_BUTTON = "//*[@id=\"mat-input-0\"]";
     private static final String MEGABUS_RETDATE_BUTTON = "//*[@id=\"mat-input-1\"]";
     private static final String MEGABUS_MONTH_YEAR = "//*/mat-calendar-header/div/div/button[1]/span[2]/span"; //*[@id="mat-datepicker-3"]/mat-calendar-header/div/div/button[1]/span[2]/span
-    private static final String MEGABUS_DAY = "//*/div/mat-month-view/table/tbody/tr[3]/td[7]/button/span[1]";
+    private static final String MEGABUS_DAY = "//*/div/mat-month-view/table/tbody/tr[3]/td[7]/button";
+    private static final String MEGABUS_NEXTMONTH = "//*/mat-calendar-header/div/div/button[3]";
 
     @Override
     public String getURL() { return MEGABUS_URL; }
@@ -78,5 +79,8 @@ public class MegabusLocators implements LocatorsBase {
     @Override
     public String getDay() {
         return MEGABUS_DAY;
+    }
+    public String getNextMonth() {
+        return MEGABUS_NEXTMONTH;
     }
 }

@@ -16,11 +16,17 @@ public class CustomDate {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy", java.util.Locale.ENGLISH);
         return date.format(formatter);
     }
-    public int getDay() {
+    public int getDayOfMonth() {
         return date.getDayOfMonth();
     }
-    public int dayOfWeek() {
+    public int getDayOfWeek() {
         return date.getDayOfWeek().getValue();
+    }
+    public int getYear() {
+        return date.getYear();
+    }
+    public int getMonth() {
+        return date.getMonthValue();
     }
     @Override
     public String toString() {

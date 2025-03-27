@@ -50,6 +50,11 @@ public class FlixBusLocators implements LocatorsBase{
     }
 
     @Override
+    public String getNextMonth() {
+        return null;
+    }
+
+    @Override
     public String getFromInput() {
         return null;
     }
