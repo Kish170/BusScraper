@@ -28,7 +28,7 @@ public class MBSearchPage extends BasePage {
         WebElement fromCity = checkElement(locator.getFromInput());
         WebElement toCity = checkElement(locator.getToInput());
         WebElement dateButton = checkElement(locator.getDateButton());
-        WebElement incrementTravelers = checkElement(locator.getTravelersInput());
+        WebElement travelersInput = checkElement(locator.getTravelersInput());
         WebElement searchButton = checkElement(locator.getSearchButton());
 
         tripButton.click();
@@ -48,9 +48,8 @@ public class MBSearchPage extends BasePage {
             setDate(returnDate);
         }
 
-        for (int i = 1; i < travelers; i++) {
-            incrementTravelers.click();
-        }
+        travelersInput.clear();
+        travelersInput.sendKeys(String.valueOf(travelers));
         searchButton.click();
     }
 
@@ -63,7 +62,6 @@ public class MBSearchPage extends BasePage {
 
     public void setDate (LocalDate date) {
         String monthStr = date.getMonth().name().substring(0, 3).toUpperCase();
-        String dayStr = String.valueOf(date.getDayOfMonth());
 
         WebElement month = checkElement(locator.getMonthYear());
 
@@ -90,7 +88,6 @@ public class MBSearchPage extends BasePage {
             td = (dayOfWeek <= 3 ? 2 : 1) + (int) Math.ceil(remainingDays / 7.0);
             tr = date.getDayOfWeek().getValue() + 1;
         }
-        String dayText = locator.getDay();
 
         String dayLocator = locator.getDay().replace("row", String.valueOf(td)).replace("col", String.valueOf(tr));
         WebElement nextMonthButton = checkElement(locator.getNextMonth());

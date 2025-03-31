@@ -7,19 +7,15 @@ public class MegabusLocators {
     private static final String MEGABUS_ROUNDTRIP_BUTTON = "//*[@id=\"homepageContentArea\"]/div[1]/mb-user-home/div/div/div/div/div/mb-journey-planner-lite/div/div/mb-journey-search/div/div/div/div/form/div[1]/div/fieldset/mb-radio-group/div[2]/label";
     private static final String MEGABUS_FROM_INPUT = "//*[@id=\"startingAt\"]";
     private static final String MEGABUS_TO_INPUT = "//*[@id=\"goingTo\"]";
-    private static final String MEGABUS_TRAVELERS_INPUT = "//*[@id=\"totalPassengers_plus\"]";
+    private static final String MEGABUS_TRAVELERS_INPUT = "//*[@id=\"totalPassengers\"]";
     private static final String MEGABUS_SEARCH_BUTTON = "//*[@id=\"findTickets\"]";
     private static final String MEGABUS_DATE_BUTTON = "//*[@id=\"mat-input-0\"]";
     private static final String MEGABUS_RETDATE_BUTTON = "//*[@id=\"mat-input-1\"]";
-    private static final String MEGABUS_MONTH_YEAR = "//*/mat-calendar-header/div/div/button[1]/span[2]/span"; //*[@id="mat-datepicker-3"]/mat-calendar-header/div/div/button[1]/span[2]/span
+    private static final String MEGABUS_MONTH_YEAR = "//*/mat-calendar-header/div/div/button[1]/span[2]/span";
     private static final String MEGABUS_DAY = "//*/div/mat-month-view/table/tbody/tr[row]/td[col]/button";
     private static final String MEGABUS_NEXTMONTH = "//*/mat-calendar-header/div/div/button[3]";
 
     public String getURL() { return MEGABUS_URL; }
-
-    public String getStopsURL() {
-        return null;
-    }
 
     public String getCloseButton() {
         return MEGABUS_CLOSE_BUTTON;
@@ -27,10 +23,6 @@ public class MegabusLocators {
 
     public String getOneWayButton() {
         return MEGABUS_ONEWAY_BUTTON;
-    }
-
-    public String getCityElements() {
-        return null;
     }
 
     public String getRoundTripButton() {
