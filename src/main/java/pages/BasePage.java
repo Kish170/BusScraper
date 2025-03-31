@@ -1,6 +1,5 @@
 package pages;
 
-import locators.LocatorsBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,13 +13,11 @@ public abstract class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;
-    protected LocatorsBase locator;
 
-    public BasePage(WebDriver driver, LocatorsBase locator){
+    public BasePage(WebDriver driver){
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.actions = new Actions(driver);
-        this.locator = locator;
     }
     public void sleep(int seconds){
         System.out.println("Waiting for "+ seconds+" seconds...");

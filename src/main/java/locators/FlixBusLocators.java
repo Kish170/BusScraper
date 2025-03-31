@@ -1,6 +1,6 @@
 package locators;
 
-public class FlixBusLocators implements LocatorsBase{
+public class FlixBusLocators {
     private static final String FLIXBUS_URL = "https://www.flixbus.ca/";
     private static final String FLIXBUS_CLOSE_BUTTON = "";
     private static final String FLIXBUS_ONEWAY_BUTTON = "//*[@id=\"search-mask-component\"]/div/div/div/div[1]/fieldset/div[1]/div/label";
@@ -15,17 +15,14 @@ public class FlixBusLocators implements LocatorsBase{
     private static final String FLIXBUS_DATE_BUTTON = "//*[@id=\"dateInput-from\"]";
     private static final String FLIXBUS_MONTH_YEAR = "//*[@id=\"calendar-grid\"]/caption";
     private static final String FLIXBUS_DAY = "//*/tbody/tr[2]/td[*]/button";
-    @Override
     public String getURL() {
         return null;
     }
 
-    @Override
     public String getStopsURL() {
         return null;
     }
 
-    @Override
     public String getCloseButton() {
         return null;
     }
@@ -34,57 +31,46 @@ public class FlixBusLocators implements LocatorsBase{
         return FLIXBUS_ONEWAY_BUTTON;
     }
 
-    @Override
     public String getCityElements() {
         return null;
     }
 
-    @Override
     public String getRoundTripButton() {
         return FLIXBUS_ROUNDTRIP_BUTTON;
     }
 
-    @Override
     public String getReturnDateButton() {
         return null;
     }
 
-    @Override
     public String getNextMonth() {
         return null;
     }
 
-    @Override
     public String getFromInput() {
         return null;
     }
 
-    @Override
     public String getToInput() {
         return null;
     }
 
-    @Override
     public String getTravelersInput() {
         return null;
     }
 
-    @Override
     public String getSearchButton() {
         return null;
     }
 
-    @Override
     public String getDateButton() {
         return null;
     }
 
-    @Override
     public String getMonthYear() {
         return null;
     }
 
-    @Override
     public String getDay() {
         return null;
     }
