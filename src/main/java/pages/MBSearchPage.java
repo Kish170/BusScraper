@@ -32,10 +32,12 @@ public class MBSearchPage extends BasePage {
         WebElement searchButton = checkElement(locator.getSearchButton());
 
         tripButton.click();
+        fromCity.clear();
         fromCity.sendKeys(from);
         this.sleep(2);
         actions.moveToElement(fromCity).sendKeys(Keys.ENTER).perform();
 
+        toCity.clear();
         toCity.sendKeys(to);
         this.sleep(2);
         actions.moveToElement(toCity).sendKeys(Keys.ENTER).perform();
